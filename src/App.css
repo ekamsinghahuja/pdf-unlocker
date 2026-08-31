@@ -23,7 +23,7 @@ body {
 }
 
 .sidebar.closed {
-  width: 64px;
+  width: 80px;
 }
 
 .sidebar-header {
@@ -125,7 +125,7 @@ body {
 .sidebar-toggle {
   position: absolute;
   top: 20px;
-  right: -12px;
+  right: -20px;
 
   width: 28px;
   height: 28px;
