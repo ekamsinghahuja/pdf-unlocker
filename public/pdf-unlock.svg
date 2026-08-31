@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect x="10" y="4" width="44" height="56" rx="6" fill="#e53935"/>
+  <path d="M20 4h24l10 10v40a6 6 0 0 1-6 6H16a6 6 0 0 1-6-6V10a6 6 0 0 1 6-6z" fill="#f44336"/>
+  <path d="M44 4v12h12" fill="#c62828"/>
+  
+  <text x="32" y="34"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="13"
+        font-weight="bold"
+        fill="white">PDF</text>
+
+  <rect x="27" y="42" width="20" height="14" rx="3" fill="#fff"/>
+  <path d="M31 42v-4a6 6 0 0 1 12 0v4"
+        fill="none"
+        stroke="#fff"
+        stroke-width="4"
+        stroke-linecap="round"/>
+  <path d="M37 47v5"
+        stroke="#f44336"
+        stroke-width="3"
+        stroke-linecap="round"/>
+</svg>
