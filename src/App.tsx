@@ -16,6 +16,12 @@ function App() {
   return (
     <div className="app">
       <aside className={`sidebar ${sidebarOpen ? "open" : "closed"}`}>
+        <span className = "sidebar-header">
+            <span className="nav-icon">
+              <FileText size={19} strokeWidth={1.8} />
+            </span>
+            <span className="nav-label">PDF Tools</span>
+          </span> 
         <button
           className="sidebar-toggle"
           onClick={() => setSidebarOpen((open) => !open)}
@@ -25,14 +31,6 @@ function App() {
         </button>
 
         <nav className="sidebar-nav">
-
-          <span className = "sidebar-header">
-            <span className="nav-icon">
-              <FileText size={19} strokeWidth={1.8} />
-            </span>
-            <span className="nav-label">PDF Tools</span>
-          </span> 
-
           <button
             className={`nav-item ${feature === "unlock" ? "active" : ""}`}
             onClick={() => setFeature("unlock")}
