@@ -1,75 +1,102 @@
-# React + TypeScript + Vite
+# PDF Unlocker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A privacy-focused, browser-based PDF utility for managing password-protected PDF files.
 
-Currently, two official plugins are available:
+The application processes PDFs **entirely in your browser**. Once a PDF is loaded, its binary data stays on your device and is processed locally — **no PDF data is uploaded to a server or sent over the network**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+### 🔓 Unlock PDF
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Remove password protection from a PDF when you know the existing password and create an accessible copy of the document.
 
-## Expanding the ESLint configuration
+### 🔐 Change Password
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Change the password protecting an existing PDF by decrypting it with the current password and applying a new one.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 📄 Add Password
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Protect an unencrypted PDF by adding a password to restrict access to its contents.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🔒 Privacy First
 
+Your PDF never needs to leave your browser.
+
+The application follows a **client-side processing model**:
+
+1. You select a PDF from your device.
+2. The PDF binary is loaded directly into the browser.
+3. All PDF processing happens locally.
+4. The resulting PDF is generated locally.
+5. You download the processed file directly to your device.
+
+**No PDF is uploaded to a backend server.**
+
+This means there is no server-side storage of your documents and no network transfer of the PDF contents during processing.
+
+> **Note:** No software can honestly guarantee absolute security in every environment. This project is designed so that the PDF itself is processed locally and is not transmitted to a server.
+
+## 🛠️ How It Works
+
+The application uses WebAssembly-based PDF processing to perform operations directly inside the browser.
+
+Instead of following the traditional flow:
+
+```text
+PDF → Upload Server → Process → Download
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+the application uses:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```text
+PDF
+ ↓
+Browser
+ ↓
+Local PDF Processing
+ ↓
+New PDF
+ ↓
+Download
 ```
+
+Once the PDF is loaded, its binary data remains within the browser during processing.
+
+## 🚀 Features at a Glance
+
+| Feature             | Description                                            |
+| ------------------- | ------------------------------------------------------ |
+| 🔓 Unlock           | Remove password protection using the existing password |
+| 🔐 Change Password  | Replace an existing PDF password                       |
+| 🛡️ Add Password    | Add password protection to a PDF                       |
+| 🔒 Local Processing | PDF processing happens entirely in the browser         |
+| 🌐 No PDF Upload    | PDF contents are not sent to a backend server          |
+
+## 🎯 Why This Project?
+
+PDF tools often require users to upload sensitive documents to a remote server.
+
+This project takes a different approach: **process the document locally whenever possible**.
+
+That makes it particularly useful for documents containing sensitive or private information where uploading the PDF to a third-party service is undesirable.
+
+## 📦 Tech Stack
+
+* React
+* JavaScript / TypeScript
+* WebAssembly
+* Client-side PDF processing
+* CSS
+
+## ⚠️ Security Note
+
+This application is designed for **privacy-preserving local PDF processing**. While the application does not upload the PDF for processing, users should still follow normal security practices:
+
+* Use trusted devices.
+* Keep your browser updated.
+* Avoid entering passwords on compromised systems.
+* Verify the generated PDF before deleting the original.
+
+## 📄 License
+
+See the `LICENSE` file for details.
