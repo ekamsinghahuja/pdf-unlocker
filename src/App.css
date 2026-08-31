@@ -182,3 +182,82 @@
     border-right-color: var(--border);
   }
 }
+
+/* Additional form and layout styling to enhance visuals */
+.upload input[type="file"] {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px dashed var(--border);
+  background: transparent;
+  color: var(--text-h);
+}
+
+.upload input[type="password"],
+.upload input[type="text"] {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-h);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.hero {
+  padding: 28px 0 8px;
+}
+
+#center header h1 {
+  margin-top: 8px;
+}
+
+#center main {
+  background: transparent;
+  padding: 20px 0;
+}
+
+#next-steps .icon {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+#next-steps p {
+  color: var(--text);
+  margin-top: 8px;
+}
+
+#next-steps ul {
+  margin-top: 16px;
+  padding-left: 0;
+}
+
+#next-steps ul li {
+  margin: 8px 0;
+}
+
+#next-steps a {
+  color: var(--text-h);
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+#spacer {
+  flex-shrink: 0;
+}
