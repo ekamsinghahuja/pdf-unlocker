@@ -54,6 +54,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  margin-top: 6px;
 }
 
 .nav-item {
@@ -368,4 +369,26 @@ body {
   font-size: 13px;
   line-height: 1.5;
   color: #6b7280;
+}
+
+
+.feature-transition {
+  animation: featureEnter 5.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes featureEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(110px) scale(0.96);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.005);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
