@@ -33,7 +33,7 @@ function PdfRecovery() {
             return;
         }
 
-        const fs = qpdf.FS as QpdfFS;
+        // const fs = qpdf.FS as QpdfFS;
 
         if (!file) {
             setStatus("Please select a PDF.");
