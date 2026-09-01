@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { generateCandidates } from "../hacker/candidateGenerator";
-import type { QpdfFS, QpdfModule } from "../types/qpdf";
+import type {QpdfModule } from "../types/qpdf";
 import createModule from "@neslinesli93/qpdf-wasm";
 
 function PdfRecovery() {
